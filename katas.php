@@ -1,6 +1,10 @@
 <?php
 
+// Write a function to split a string and convert it into an array of words.
 
+function string_to_array($s){
+  return explode(" ", $s);
+}
 
 
 
