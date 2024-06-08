@@ -1,5 +1,32 @@
 <?php
 
+// There is an array with some numbers. All numbers are equal except for one. Try to find it!
+
+function find_uniq($a) {
+  $diffNum = null;
+  for($i = 0; $i < count($a); $i++){
+    if($i === count($a) - 1){
+      if($a[$i] !== $a[$i - 1] && $a[$i] !== $a[$i - 2]){
+        $diffNum = $a[$i];
+      }
+    } elseif($i === 0) {
+      if($a[$i] !== $a[$i + 1] && $a[$i] !== $a[$i + 2]){
+        $diffNum = $a[$i];
+      }
+    } else {
+      if($a[$i] !== $a[$i - 1] && $a[$i] !== $a[$i + 1]){
+        $diffNum = $a[$i]; 
+      }
+    }
+  }
+
+  return $diffNum;
+}
+
+// echo(find_uniq([ 1, 1, 1, 2, 1, 1 ]));
+
+
+
 // Write a function to split a string and convert it into an array of words.
 
 function string_to_array($s){
