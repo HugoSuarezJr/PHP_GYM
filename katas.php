@@ -1,5 +1,57 @@
 <?php
 
+function wave(string $people): array {
+  
+  $result = [];
+
+  for($i = 0; $i < strlen($people); $i++){
+    if(ctype_space($people[$i])) continue;
+    $result[] = substr_replace($people, strtoupper($people[$i]), $i, 1);
+  }
+
+  return $result;
+}
+
+var_dump(wave("hello"));
+
+
+
+// Love pedal kata
+
+function how_much_i_love_you(int $nb_petals): string {
+  $finalNum = $nb_petals;
+  
+  if ($finalNum > 6){
+    $subNum = floor($finalNum/6) * 6;
+    $finalNum = $finalNum - $subNum;
+  }
+  
+  switch ($finalNum) {
+      case 1:
+        return "I love you";
+        break;
+      case 2:
+        return "a little";
+        break;
+      case 3:
+        return "a lot";
+        break;
+      case 4:
+        return "passionately";
+        break;
+      case 5:
+        return "madly";
+        break;
+      case 6:
+        return "not at all";
+      
+  }   
+}
+
+// echo(how_much_i_love_you(10000000));
+
+// echo(array_unique([ 1, 1, 1, 2, 1, 1 ]));
+
 // There is an array with some numbers. All numbers are equal except for one. Try to find it!
 
 function find_uniq($a) {
