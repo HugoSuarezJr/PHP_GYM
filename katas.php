@@ -1,5 +1,11 @@
 <?php
+// String ends with?
 
+function endsWith($str, $ending){
+  return str_ends_with($str, $ending);
+}
+
+// Wave Function
 function wave(string $people): array {
   
   $result = [];
